@@ -2,11 +2,12 @@
 using namespace std;
 int main()
 {
-int x;
-cout << " 정수값을 입력하세요 -> ";
-cin >> x;
-if(x < 0) x = -x; // 부호 변경
-cout << " 절댓값 => " << x << "\n";
-char ch; cin>>ch;
-return 0;
+    int i=0;
+    while(true){
+        cout<<"\t"<<++i;
+        if(i%10==0) goto exit_while;
+    }
+exit_while:
+    cout<<"\n >> -----The End ---- <<\n";
+    char ch; cin>>ch;
 }
