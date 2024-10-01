@@ -10,5 +10,8 @@ int main(){
 
     age=30;
     cout<<"Update Agel=:"<< age <<endl;
+    short m_short;
+    m_short=40000;
+    cout<<m_short;
     return 0;
 }
