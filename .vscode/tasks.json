@@ -5,19 +5,20 @@
             "label": "C/C++: gcc.exe build active file",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
-                "-fdiagnostics-color=always",
-                "-std=c++11",
-                "-g",
-                "-fpermissive",  // 비표준 구문 허용
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "-fdiagnostics-color=always", // 색상 표시
+                "-std=c++11",                // C++ 표준 지정
+                "-g",                        // 디버깅 심볼 포함
+                "-fpermissive",              // 비표준 코드 허용 (void main() 등)
+                "-Wno-return-type",          // 반환 타입 경고 무시 (void main 허용)
+                "${file}",                   // 컴파일할 현재 파일
+                "-o",                        // 실행 파일 출력 경로
+                "${fileDirname}\\${fileBasenameNoExtension}.exe" // 출력 파일 이름
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}" // 현재 파일 디렉토리를 작업 디렉토리로 설정
             },
             "problemMatcher": [
-                "$gcc"
+                "$gcc" // GCC 컴파일러 출력 패턴 사용
             ],
             "group": {
                 "kind": "build",
